@@ -7,11 +7,12 @@ import javafx.geometry.Insets;
 import javafx.stage.Stage;
 import javafx.scene.image.ImageView;
 import java.util.ArrayList;
-
+import java.util.*;
 public class Main extends Application {
     @Override
     public void start(Stage primaryStage) {
 
+        //Window
         Pane pane = new HBox(10);
         pane.setPadding(new Insets(5, 5, 5, 5));
 
@@ -22,12 +23,15 @@ public class Main extends Application {
             cards.add(String.valueOf(i + 1));
         }
 
-        java.util.Collections.shuffle(cards);
+        //Shuffling
+        Collections.shuffle(cards);
 
+        //Image objects
         ImageView image1 = new ImageView("file:///C:/Users/100723510/Desktop/Cards/" + cards.get(0) + ".png");
         ImageView image2 = new ImageView("file:///C:/Users/100723510/Desktop/Cards/" + cards.get(1) + ".png");
         ImageView image3 = new ImageView("file:///C:/Users/100723510/Desktop/Cards/" + cards.get(2) + ".png");
 
+        //Placing images in scene
         pane.getChildren().add(image1);
         pane.getChildren().add(image2);
         pane.getChildren().add(image3);
